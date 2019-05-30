@@ -1,22 +1,21 @@
 <template>
   <div>
-    <header />
-    <footer />
+    <Header />
+    <Footer />
     <slider-menu></slider-menu>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import header from "./header";
-import footer from "./footer";
-import sliderMenu from "./slider-menu";
+import Header from "./header";
+import Footer from "./footer";
+import SliderMenu from "./slider-menu";
 export default {
   components: {
-    /* eslint-disable vue/no-unused-components */
-    header,
-    footer,
-    sliderMenu
+    Header,
+    Footer,
+    SliderMenu
   }
 };
 </script>
