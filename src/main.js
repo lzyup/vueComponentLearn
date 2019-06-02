@@ -4,12 +4,15 @@ import router from "./router";
 import store from "./store";
 // import Antd from "ant-design-vue"
 // import 'ant-design-vue/dist/antd.less'
-import { Button } from "ant-design-vue";
+import { Button, Layout, Icon, Drawer, Radio } from "ant-design-vue";
 // Vue.use(Antd)
-Vue.component(Button.name, Button);
-
+// Vue.component(Button.name, Button);
+Vue.use(Button);
+Vue.use(Layout);
+Vue.use(Icon);
+Vue.use(Drawer);
+Vue.use(Radio);
 Vue.config.productionTip = false;
-
 new Vue({
   router,
   store,
