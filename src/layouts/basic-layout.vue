@@ -9,7 +9,7 @@
         v-model="collapsed"
       >
         <div class="logo">Ant Design Vue Pro</div>
-        <slider-menu></slider-menu>
+        <slider-menu :theme="navTheme"></slider-menu>
       </a-layout-sider>
       <a-layout>
         <a-layout-header style="background: #fff; padding: 0">
@@ -73,6 +73,6 @@ export default {
   overflow: hidden;
 }
 .nav-theme-dark >>> .logo {
-  color: #ffffff;
+  color: #000000;
 }
 </style>

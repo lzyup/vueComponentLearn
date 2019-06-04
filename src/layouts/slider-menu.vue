@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 256px">
+  <div style="width: 200px">
     <a-menu
       :selectedKeys="selectedKeys"
       :openKeys.sync="openKeys"
@@ -31,7 +31,7 @@ export default {
     }
   },
   components: {
-    "sub-menu": SubMenu
+    SubMenu
   },
   watch: {
     "$route.path": function(val) {
