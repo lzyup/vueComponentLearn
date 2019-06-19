@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import NotFound from "./views/404";
+import Forbidden from "./views/403";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 Vue.use(Router);
@@ -109,6 +110,12 @@ const router = new Router({
           ]
         }
       ]
+    },
+    {
+      path: "/403",
+      name: "403",
+      hideInMenu: true,
+      component: Forbidden
     },
     {
       path: "*",
