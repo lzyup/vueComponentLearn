@@ -21,7 +21,7 @@ export default {
   methods: {
     async async1() {
       console.log("async1 start");
-      await this.async2();
+      await 3;
       console.log("async1 end");
     },
     async async2() {
