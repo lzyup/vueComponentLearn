@@ -7,6 +7,7 @@
         :trigger="null"
         collapsible
         v-model="collapsed"
+        width="256px"
       >
         <div class="logo">Ant Design Vue Pro</div>
         <slider-menu :theme="navTheme"></slider-menu>
