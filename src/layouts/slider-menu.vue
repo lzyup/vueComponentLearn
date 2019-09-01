@@ -43,10 +43,9 @@ export default {
   data() {
     this.selectedKeysMap = {};
     this.openKeysMap = {};
-    console.log("测试路由选项1111------>");
-    console.log("测试路由选项", JSON.stringify(this.$router.options.routes));
+    // console.log("测试路由选项", JSON.stringify(this.$router.options.routes));
     const menuData = this.getMenuData(this.$router.options.routes);
-    console.log("测试menuData------->", JSON.stringify(menuData));
+    // console.log("测试menuData------->", JSON.stringify(menuData));
     return {
       collapsed: false,
       menuData,

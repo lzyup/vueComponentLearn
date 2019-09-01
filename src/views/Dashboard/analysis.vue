@@ -1,31 +1,53 @@
 <template>
-  <div>分析页</div>
+  <Chart :option="chartOption" style="height: 400px" />
 </template>
 
 <script>
+import Chart from "../../components/chart";
+import axios from "axios";
+import { clearInterval } from "timers";
 export default {
-  created() {
-    console.log("script start");
-    setTimeout(() => {
-      console.log("settimeout");
-    }, 0);
-    this.async1();
-    new Promise(resolve => {
-      console.log("promise1");
-      resolve();
-    }).then(function() {
-      console.log("promise2");
-    });
-    console.log("script end");
+  data() {
+    return {
+      chartOption: {}
+    };
+  },
+  created() {},
+  mounted() {
+    this.getChartData();
+    this.interval = setInterval(() => {
+      this.getChartData();
+    }, 3000);
+  },
+  beforeDestroy() {
+    clearInterval(this.interval);
+  },
+  components: {
+    Chart
   },
   methods: {
-    async async1() {
-      console.log("async1 start");
-      await 3;
-      console.log("async1 end");
-    },
-    async async2() {
-      console.log("async2");
+    getChartData() {
+      axios
+        .get("/api/dashboard/chart", { params: { ID: 12345 } })
+        .then(response => {
+          this.chartOption = {
+            title: {
+              text: "ECharts 入门示例"
+            },
+            tooltip: {},
+            xAxis: {
+              data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+            },
+            yAxis: {},
+            series: [
+              {
+                name: "销量",
+                type: "bar",
+                data: response.data
+              }
+            ]
+          };
+        });
     }
   }
 };
