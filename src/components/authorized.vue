@@ -1,5 +1,6 @@
 <script>
 import { check } from "../utils/auth.js";
+//函数式组件的简单应用
 export default {
   functional: true,
   props: {

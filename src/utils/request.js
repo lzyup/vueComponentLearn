@@ -1,6 +1,6 @@
 import axios from "axios";
 import { notification } from "ant-design-vue";
-
+//JSX的简单应用
 function request(options) {
   return axios(options)
     .then(res => {
