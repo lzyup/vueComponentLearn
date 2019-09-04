@@ -14,7 +14,7 @@ function request(options) {
         // eslint-disable-next-line no-unused-vars
         message: h => (
           <div>
-            请求错误 <span style="color: red">{status}1</span> : {options.url}
+            请求错误 <span style="color: red">{status}</span> : {options.url}
           </div>
         ),
         description: statusText
