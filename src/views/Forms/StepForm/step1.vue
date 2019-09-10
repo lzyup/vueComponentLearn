@@ -45,6 +45,7 @@ export default {
       const { form, $router, $store } = this;
       form.validateFields((err, values) => {
         if (!err) {
+          console.log("测试values---->", values);
           $store.commit({
             type: "form/saveStepFormData",
             payload: values
