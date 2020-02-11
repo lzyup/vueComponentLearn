@@ -25,8 +25,6 @@ const actions = {
 
 const mutations = {
   saveStepFormData(state, { payload }) {
-    console.log("测试state.step---->", JSON.stringify(state.step));
-    console.log("测试payload------>", JSON.stringify(payload));
     state.step = {
       ...state.step,
       ...payload

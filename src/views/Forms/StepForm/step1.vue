@@ -60,7 +60,7 @@ export default {
     this.form = this.$form.createForm(this);
     return {
       formItemLayout: {
-        labelCol: { span: 4 },
+        labelCol: { span: 5 },
         wrapperCol: { span: 14 }
       }
     };
@@ -78,7 +78,7 @@ export default {
       const { form, $router, $store } = this;
       form.validateFields((err, values) => {
         if (!err) {
-          console.log("测试values---->", values);
+          console.log("测试values---->", JSON.stringify(values));
           $store.commit({
             type: "form/saveStepFormData",
             payload: values

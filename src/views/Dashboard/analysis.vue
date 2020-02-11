@@ -1,10 +1,17 @@
 <template>
-  <Chart :option="chartOption" style="height: 400px" />
+  <div>
+    <Chart :option="chartOption" style="height: 400px" />
+    <a-date-picker>
+      <template slot="renderExtraFooter">
+        extra footer
+      </template>
+    </a-date-picker>
+  </div>
 </template>
 
 <script>
 import Chart from "../../components/chart";
-import request from "../../utils/request";
+// import request from "../../utils/request";
 import { clearInterval } from "timers";
 export default {
   data() {
@@ -27,7 +34,7 @@ export default {
   },
   methods: {
     getChartData() {
-      request({
+      this.$http({
         url: "/api/dashboard/chart",
         method: "get",
         params: { ID: 12345 }

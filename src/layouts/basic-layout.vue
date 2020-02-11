@@ -30,9 +30,10 @@
         </a-layout-footer>
       </a-layout>
     </a-layout>
-    <Authorized :authority="['admin']">
+    <!-- <Authorized :authority="['admin']">
       <setting-drawer></setting-drawer>
-    </Authorized>
+    </Authorized> -->
+    <setting-drawer v-auth="['admin,user']"></setting-drawer>
   </div>
 </template>
 <script>

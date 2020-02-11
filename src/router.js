@@ -136,10 +136,10 @@ router.beforeEach((to, from, next) => {
   }
   console.log("测试to.matched----->", to.matched);
   const record = findLast(to.matched, record => record.meta.authority);
-  console.log("测试record--->", record);
-  console.log("测试record.meta.authority--->", record.meta.authority);
-  console.log("测试check结果---->", check(record.meta.authority));
-  if (record && !check(record.meta.authority)) {
+  console.log("测试record11--->", record);
+  // console.log("测试record.meta.authority--->", record.meta.authority);
+  // console.log("测试check结果---->", check(record.meta.authority));
+  if (record && record.meta && !check(record.meta.authority)) {
     if (!isLogin() && to.path !== "/user/login") {
       next({
         path: "/user/login"

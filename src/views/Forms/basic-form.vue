@@ -28,7 +28,7 @@
       >
         <a-input
           v-decorator="[
-            'fieldA1',
+            'fieldX',
             {
               initialValue: fieldA,
               rules: [{ required: true, min: 6, message: '必须大于5个字符' }]
@@ -95,9 +95,9 @@ export default {
   },
   created() {},
   mounted() {
-    //fieldA1 对应v-decorator中的第一个选项 可以认为是表单的名字
+    //fieldA 对应v-decorator中的第一个选项 可以认为是表单的名字
     setTimeout(() => {
-      this.form.setFieldsValue({ fieldA1: "hello world" });
+      this.form.setFieldsValue({ fieldX: "hello world" });
     }, 3000);
   },
   methods: {

@@ -2,6 +2,11 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
+        modifyVars: {
+          "primary-color": "#1DA57A",
+          "link-color": "#1DA57A",
+          "border-radius-base": "2px"
+        },
         javascriptEnabled: true
       }
     }
@@ -15,6 +20,7 @@ module.exports = {
             console.log("Skipping proxy for browser request.");
             return "/index.html";
           } else if (process.env.MOCK !== "none") {
+            console.log("测试mock---->", req.path.split("/api/"));
             const name = req.path
               .split("/api/")[1]
               .split("/")
